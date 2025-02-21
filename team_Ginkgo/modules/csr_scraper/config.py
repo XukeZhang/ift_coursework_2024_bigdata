@@ -18,6 +18,6 @@ MINIO_CONFIG = {
     "endpoint": "localhost:9000",
     "access_key": "ift_bigdata",
     "secret_key": "minio_password",
-    "bucket": "csroprt"
+    "bucket": "csreport"
 }
 
