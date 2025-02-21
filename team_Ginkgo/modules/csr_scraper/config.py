@@ -18,11 +18,6 @@ MINIO_CONFIG = {
     "endpoint": "localhost:9000",
     "access_key": "ift_bigdata",
     "secret_key": "minio_password",
-    "bucket": "team-ginkgo"
+    "bucket": "csroprt"
 }
 
-# KAFKA Configuration
-KAFKA_CONFIG = {
-    "bootstrap_servers": "localhost:9092",
-    "topic": "csr_reports"
-}

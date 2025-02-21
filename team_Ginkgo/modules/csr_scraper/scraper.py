@@ -97,5 +97,6 @@ def multithread_update_csr_reports():
     end_time = time.time()
     print(f"Multithreaded scraping completed! Time taken: {end_time - start_time:.2f} seconds")
 
-if __name__ == "__main__":
-    multithread_update_csr_reports()
+## This is used for testing individual functionality and is currently commented out.
+# if __name__ == "__main__":
+#    multithread_update_csr_reports()
