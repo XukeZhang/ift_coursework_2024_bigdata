@@ -18,7 +18,7 @@ MINIO_CONFIG = {
     "endpoint": "localhost:9000",
     "access_key": "ift_bigdata",
     "secret_key": "minio_password",
-    "bucket": "csreport"
+    "bucket": "team-ginkgo"
 }
 
 # KAFKA Configuration
