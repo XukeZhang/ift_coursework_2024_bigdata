@@ -21,11 +21,10 @@ def insert_companies():
     conn.commit()
     print("✅ Database setup completed!")
 
-    # Select the top 5 companies (column name `security` corresponds to company name)
+    # Select all companies (column name `security` corresponds to company name)
     cursor.execute("""
         SELECT symbol, security FROM csr_reporting.company_static
-        ORDER BY symbol
-        LIMIT 678;
+        ORDER BY symbol;
     """)
     companies = cursor.fetchall()
 
