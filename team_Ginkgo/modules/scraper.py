@@ -90,13 +90,13 @@ def multithread_update_csr_reports():
         print("No data to scrape, check if the database is fully updated!")
         return
 
-    max_threads = 5  # Number of threads, adjustable
+    max_threads = 10  # Number of threads, adjustable
     with ThreadPoolExecutor(max_workers=max_threads) as executor:
         executor.map(process_company_data, companies)
 
     end_time = time.time()
     print(f"Multithreaded scraping completed! Time taken: {end_time - start_time:.2f} seconds")
 
-## This is used for testing individual functionality and is currently commented out.
-# if __name__ == "__main__":
-#    multithread_update_csr_reports()
+# Run
+if __name__ == "__main__":
+   multithread_update_csr_reports()

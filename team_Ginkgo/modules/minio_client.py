@@ -178,7 +178,7 @@ def multithread_process_pdfs():
         print("No PDFs to process!")
         return
 
-    max_threads = 7  # 7 threads for execution
+    max_threads = 10  # Number of threads, adjustable
     with ThreadPoolExecutor(max_workers=max_threads) as executor:
         executor.map(process_pdf, reports)
 
@@ -190,9 +190,9 @@ def close_driver():
     print("Closing Selenium WebDriver...")
     global_driver.quit()
 
-# # This is used for testing individual functionality and is currently commented out.
-# if __name__ == "__main__":
-#     try:
-#         multithread_process_pdfs()
-#     finally:
-#         close_driver()
+# Run
+if __name__ == "__main__":
+    try:
+        multithread_process_pdfs()
+    finally:
+        close_driver()

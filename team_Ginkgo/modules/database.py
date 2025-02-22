@@ -41,7 +41,7 @@ def insert_companies():
     conn.close()
     print("Successfully inserted companies into csr_reports")
 
-## This is used for testing individual functionality and is currently commented out.
-# if __name__ == "__main__":
-#    company_insert()
+# Run
+if __name__ == "__main__":
+   insert_companies()
 

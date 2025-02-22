@@ -33,6 +33,6 @@ def start_scheduled_tasks():
     print("Starting the background scheduler...")
     scheduler.start()
 
-# # This is used for testing individual functionality and is currently commented out.
-# if __name__ == "__main__":
-#     start_scheduled_tasks()
+# Run
+if __name__ == "__main__":
+    start_scheduled_tasks()
