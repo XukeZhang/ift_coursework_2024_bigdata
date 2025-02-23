@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>CSR 报告查询</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+        }
+        h2 {
+            color: #333;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        .result-container {
+            margin-top: 20px;
+        }
+        .error {
+            color: red;
+        }
+        .success {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>CSR 报告查询</h2>
+    <form method="post">
+        公司名称 / 股票代码: <input type="text" name="company" required>
+        <br><br>
+        年份: <input type="number" name="year" min="1900" max="2100" required>
+        <br><br>
+        <button type="submit">查询</button>
+    </form>
+
+    <div class="result-container">
+        {% if result %}
+            {% if result is iterable and result is not string %}
+                <h3 class="success">查询结果：</h3>
+                <ul>
+                    {% for item in result %}
+                        <li>
+                            <p>✅ 公司: <strong>{{ item.company_name }}</strong> ({{ item.symbol }})</p>
+                            <p>🌍 报告网页: <a href="{{ item.report_url }}" target="_blank">{{ item.report_url }}</a></p>
+                            <p>📂 MinIO 存储路径: <code>{{ item.minio_path }}</code></p>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p class="error">⚠️ {{ result.message }}</p>
+            {% endif %}
+        {% endif %}
+    </div>
+
+</body>
+</html>
